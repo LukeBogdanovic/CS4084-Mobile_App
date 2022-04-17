@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MobileAppProject</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="background_image_of_drinks">Background image of drinks</string>
+    <string name="string_background_image_of_drinks">background image</string>
 </resources>
