@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    private Button checkListBtn;
+    private Button checkListBtn, clockBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,12 +16,17 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
         initializeUI();
         checkListBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(DashboardActivity.this,ChecklistActivity.class);
+            Intent intent = new Intent(DashboardActivity.this, ChecklistActivity.class);
+            startActivity(intent);
+        });
+        clockBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(DashboardActivity.this, ClockActivity.class);
             startActivity(intent);
         });
     }
 
     private void initializeUI() {
         checkListBtn = findViewById(R.id.checkListBtn);
+        clockBtn = findViewById(R.id.clockBtn);
     }
 }

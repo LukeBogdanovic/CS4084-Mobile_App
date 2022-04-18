@@ -24,6 +24,7 @@
             tools:ignore="Instantiatable" />
         <activity android:name=".DashboardActivity"/>
         <activity android:name=".ChecklistActivity"/>
+        <activity android:name=".ClockActivity"/>
     </application>
 
 </manifest>
