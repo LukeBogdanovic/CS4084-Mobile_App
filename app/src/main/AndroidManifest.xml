@@ -23,6 +23,7 @@
         <activity android:name=".RegistrationActivity"
             tools:ignore="Instantiatable" />
         <activity android:name=".DashboardActivity"/>
+        <activity android:name=".ChecklistActivity"/>
     </application>
 
 </manifest>

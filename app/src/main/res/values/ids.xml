@@ -5,4 +5,5 @@
     <item name="password" type="id" />
     <item name="email" type="id" />
     <item name="register" type="id" />
+    <item name="listViewItems" type="id" />
 </resources>

@@ -4,4 +4,13 @@
     <string name="login">Login</string>
     <string name="background_image_of_drinks">Background image of drinks</string>
     <string name="string_background_image_of_drinks">background image</string>
+    <string name="ul">UL</string>
+    <string name="normal">Normal</string>
+    <string name="pure_satellite">Pure Satellite</string>
+    <string name="satellite">Satellite</string>
+    <string name="my_location">My Location</string>
+    <string name="add_item">Add Item</string>
+    <string name="enter_a_new_item">Enter a new item</string>
+    <string name="default_text">Default text</string>
+    <string name="checklist">Checklist</string>
 </resources>
