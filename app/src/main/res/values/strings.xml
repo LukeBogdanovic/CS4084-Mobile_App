@@ -20,4 +20,5 @@
     <string name="startText">Start</string>
     <string name="resetText">Reset</string>
     <string name="stopwatchBack">background of stopwatch</string>
+    <string name="hello_blank_fragment">Hello Blank fragment</string>
 </resources>

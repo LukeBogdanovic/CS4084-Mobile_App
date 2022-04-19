@@ -15,6 +15,7 @@ public class StopWatchFragment extends Fragment {
     private final int REFRESH_RATE = 100;
     View view;
     Button buttonStart, buttonStop, buttonReset;
+    TextView timer, timerMs;
     private boolean stopped = false;
     private long startTime, elapsedTime, secs, mins, hrs, mSecs;
     private String hours, minutes, seconds, milliSeconds;
@@ -34,6 +35,8 @@ public class StopWatchFragment extends Fragment {
         buttonStart = (Button) view.findViewById(R.id.buttonStart);
         buttonStop = (Button) view.findViewById(R.id.buttonStop);
         buttonReset = (Button) view.findViewById(R.id.buttonReset);
+        timer = (TextView) view.findViewById(R.id.timer);
+        timerMs = (TextView) view.findViewById(R.id.timerMs);
         buttonStart.setOnClickListener(v -> {
             showStopButton();
             if (stopped) {
@@ -110,8 +113,8 @@ public class StopWatchFragment extends Fragment {
             milliSeconds = "00";
         }
         milliSeconds = milliSeconds.substring(milliSeconds.length() - 3, milliSeconds.length() - 2);
-        ((TextView) view.findViewById(R.id.timer)).setText(hours + ":" + minutes + ":" + seconds);
-        ((TextView) view.findViewById(R.id.timerMs)).setText("." + milliSeconds);
+        timer.setText(hours + ":" + minutes + ":" + seconds);
+        timerMs.setText("." + milliSeconds);
     }
 
 }

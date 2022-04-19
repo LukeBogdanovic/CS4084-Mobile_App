@@ -19,4 +19,11 @@
     <item name="timerStartButton" type="id" />
     <item name="timerStopButton" type="id" />
     <item name="timerResetButton" type="id" />
+    <item name="countSecond" type="id" />
+    <item name="countDays" type="id" />
+    <item name="countHour" type="id" />
+    <item name="countMinute" type="id" />
+    <item name="timerInput" type="id" />
+    <item name="editTextMinutes" type="id" />
+    <item name="editTextSeconds" type="id" />
 </resources>
