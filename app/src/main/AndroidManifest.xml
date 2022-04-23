@@ -26,6 +26,9 @@
         <activity android:name=".ChecklistActivity"/>
         <activity android:name=".ClockActivity"/>
         <activity android:name=".GameInstructionsActivity"/>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
