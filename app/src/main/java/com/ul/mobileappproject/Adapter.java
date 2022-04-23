@@ -37,7 +37,6 @@ public class Adapter extends RecyclerView.Adapter<Holder> implements Filterable 
     @Override
     public void onBindViewHolder(Holder holder, int position) {
         holder.gameText.setText(games.get(position).getGame());
-        holder.descriptionText.setText(games.get(position).getDescription());
         holder.setItemClickListener((view, pos) -> Snackbar.make(view, games.get(pos).getGame(), Snackbar.LENGTH_SHORT).show());
     }
 

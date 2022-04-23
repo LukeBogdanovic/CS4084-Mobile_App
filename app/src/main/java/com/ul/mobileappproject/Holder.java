@@ -7,14 +7,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class Holder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    TextView gameText,descriptionText;
+    TextView gameText;
 
     ItemClickListener itemClickListener;
 
     public Holder(View itemView) {
         super(itemView);
         this.gameText = itemView.findViewById(R.id.gameText);
-        this.descriptionText = itemView.findViewById(R.id.description_text);
 
         itemView.setOnClickListener(this);
     }
