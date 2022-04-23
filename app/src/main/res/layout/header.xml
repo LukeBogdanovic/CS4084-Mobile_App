@@ -28,4 +28,5 @@
         android:text="@string/your_local_drinking_app"
         android:textColor="#BB30EF"
         android:textSize="14sp" />
+  
 </LinearLayout>
