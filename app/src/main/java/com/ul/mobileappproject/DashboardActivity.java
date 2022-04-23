@@ -20,7 +20,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
-    private Button checkListBtn, clockBtn;
+    private Button checkListBtn, clockBtn, countBtn, drinkawarenessBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +47,21 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             Intent intent = new Intent(DashboardActivity.this, ClockActivity.class);
             startActivity(intent);
         });
+        countBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(DashboardActivity.this, DrinksCountActivity.class);
+            startActivity(intent);
+        });
+        drinkawarenessBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(DashboardActivity.this, DrinkawareActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void initializeUI() {
         checkListBtn = findViewById(R.id.checkListBtn);
         clockBtn = findViewById(R.id.clockBtn);
+        countBtn = findViewById(R.id.countBtn);
+        drinkawarenessBtn = findViewById(R.id.drinkawarenessBtn);
     }
 
     @Override
@@ -76,10 +86,10 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 Intent checklistIntent = new Intent(DashboardActivity.this, ChecklistActivity.class);
                 startActivity(checklistIntent);
                 break;
-//            case R.id.nav_counter:
-//                Intent counterIntent = new Intent(DashboardActivity.this, CounterActivity.class);
-//                startActivity(counterIntent);
-//                break;
+            case R.id.nav_counter:
+                Intent counterIntent = new Intent(DashboardActivity.this, DrinksCountActivity.class);
+                startActivity(counterIntent);
+                break;
         }
         return true;
     }
