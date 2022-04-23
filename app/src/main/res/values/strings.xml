@@ -50,4 +50,6 @@
     <string name="beer_pong">Beer Pong</string>
     <string name="pints_pints_pints">Pints Pints Pints</string>
     <string name="your_local_drinking_app">Your local drinking app</string>
+    <string name="units_of_alcohol_consumed">units of alcohol consumed</string>
+    <string name="total_units_of_alcohol_consumed">total units of alcohol consumed</string>
 </resources>
