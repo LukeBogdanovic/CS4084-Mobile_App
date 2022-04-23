@@ -127,6 +127,10 @@ public class GameInstructionsActivity extends AppCompatActivity implements Navig
                 break;
             case R.id.nav_games:
                 break;
+            case R.id.nav_drinkaware:
+                Intent drinkawareIntent = new Intent(GameInstructionsActivity.this, DrinkawareActivity.class);
+                startActivity(drinkawareIntent);
+                break;
         }
         return true;
     }

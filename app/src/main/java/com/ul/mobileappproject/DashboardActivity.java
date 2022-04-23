@@ -2,16 +2,14 @@ package com.ul.mobileappproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.widget.Toolbar;
-import androidx.appcompat.app.ActionBar;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -68,6 +66,10 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             case R.id.nav_games:
                 Intent gamesIntent = new Intent(DashboardActivity.this, GameInstructionsActivity.class);
                 startActivity(gamesIntent);
+                break;
+            case R.id.nav_drinkaware:
+                Intent drinkawareIntent = new Intent(DashboardActivity.this, DrinkawareActivity.class);
+                startActivity(drinkawareIntent);
                 break;
         }
         return true;

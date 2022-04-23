@@ -48,4 +48,12 @@
             </group>
         </menu>
     </item>
+    <item android:title="Drink Aware">
+        <menu>
+            <item
+                android:id="@+id/nav_drinkaware"
+                android:icon="@drawable/drinkawarelogo"
+                android:title="@string/drinkaware" />
+        </menu>
+    </item>
 </menu>

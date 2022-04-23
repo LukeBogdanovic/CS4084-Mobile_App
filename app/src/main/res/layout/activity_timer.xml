@@ -6,10 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:openDrawer="end">
 
     <com.google.android.material.navigation.NavigationView
@@ -22,11 +18,9 @@
 
     </com.google.android.material.navigation.NavigationView>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="2">
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -41,6 +35,14 @@
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/menu" />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="2">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,23 +55,25 @@
                 android:id="@+id/stopwatchFragment"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:background="@color/purple_200"
                 android:text="@string/stopwatch"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/timerFragment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
+                android:layout_marginRight="16dp"
                 android:layout_weight="1"
                 android:background="@color/purple_200"
                 android:text="@string/timerString"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_anchorGravity="center" />
         </LinearLayout>
 

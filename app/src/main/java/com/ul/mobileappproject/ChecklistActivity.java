@@ -1,5 +1,6 @@
 package com.ul.mobileappproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -42,7 +43,7 @@ public class ChecklistActivity extends AppCompatActivity implements NavigationVi
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("CheckList");
         navigationView.bringToFront();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
@@ -103,7 +104,28 @@ public class ChecklistActivity extends AppCompatActivity implements NavigationVi
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-
+            case R.id.nav_home:
+                Intent homeIntent = new Intent(ChecklistActivity.this, DashboardActivity.class);
+                startActivity(homeIntent);
+                break;
+            case R.id.nav_timer:
+                Intent timerIntent = new Intent(ChecklistActivity.this, ClockActivity.class);
+                startActivity(timerIntent);
+                break;
+            case R.id.nav_checklist:
+                break;
+            case R.id.nav_counter:
+                Intent counterIntent = new Intent(ChecklistActivity.this, DrinksCountActivity.class);
+                startActivity(counterIntent);
+                break;
+            case R.id.nav_games:
+                Intent gamesIntent = new Intent(ChecklistActivity.this, GameInstructionsActivity.class);
+                startActivity(gamesIntent);
+                break;
+            case R.id.nav_drinkaware:
+                Intent drinkawareIntent = new Intent(ChecklistActivity.this, DrinkawareActivity.class);
+                startActivity(drinkawareIntent);
+                break;
         }
         return true;
     }

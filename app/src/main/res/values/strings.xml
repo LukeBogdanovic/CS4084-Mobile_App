@@ -51,4 +51,6 @@
     <string name="total_drinks_consumed">total drinks consumed</string>
     <string name="reset">reset</string>
     <string name="count">count</string>
+    <string name="games">Games</string>
+    <string name="drinkaware">Drink Aware</string>
 </resources>

@@ -94,6 +94,10 @@ public class ClockActivity extends AppCompatActivity implements NavigationView.O
                 Intent gamesIntent = new Intent(ClockActivity.this, GameInstructionsActivity.class);
                 startActivity(gamesIntent);
                 break;
+            case R.id.nav_drinkaware:
+                Intent drinkawareIntent = new Intent(ClockActivity.this, DrinkawareActivity.class);
+                startActivity(drinkawareIntent);
+                break;
         }
         return true;
     }
