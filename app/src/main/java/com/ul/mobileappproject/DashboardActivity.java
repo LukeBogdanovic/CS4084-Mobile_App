@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    private Button checkListBtn, clockBtn;
+    private Button checkListBtn, clockBtn,gameInstructionBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +23,15 @@ public class DashboardActivity extends AppCompatActivity {
             Intent intent = new Intent(DashboardActivity.this, ClockActivity.class);
             startActivity(intent);
         });
+        gameInstructionBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(DashboardActivity.this, GameInstructionsActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void initializeUI() {
         checkListBtn = findViewById(R.id.checkListBtn);
         clockBtn = findViewById(R.id.clockBtn);
+        gameInstructionBtn = findViewById(R.id.gameInstructionBtn);
     }
 }

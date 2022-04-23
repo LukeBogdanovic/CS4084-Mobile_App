@@ -25,6 +25,7 @@
         <activity android:name=".DashboardActivity"/>
         <activity android:name=".ChecklistActivity"/>
         <activity android:name=".ClockActivity"/>
+        <activity android:name=".GameInstructionsActivity"/>
     </application>
 
 </manifest>
