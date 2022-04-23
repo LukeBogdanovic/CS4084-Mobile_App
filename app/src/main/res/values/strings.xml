@@ -37,4 +37,17 @@
     <string name="drinksCount">title</string>
     <string name="count">count</string>
     <string name="reset">reset</string>
+    <string name="navigation_drawer_open"> Open navigation drawer</string>
+    <string name="navigation_drawer_close"> Close navigation drawer</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="map">Map</string>
+    <string name="tools">Tools</string>
+    <string name="timers">Timers</string>
+    <string name="counter">Counter</string>
+    <string name="drinking_games">Drinking Games</string>
+    <string name="kings_cup">Kings Cup</string>
+    <string name="beer_pong">Beer Pong</string>
+    <string name="pints_pints_pints">Pints Pints Pints</string>
+    <string name="your_local_drinking_app">Your local drinking app</string>
 </resources>

@@ -1,3 +1,4 @@
+
 package com.ul.mobileappproject;
 
 import android.os.Bundle;
@@ -30,12 +31,6 @@ public class ChecklistActivity extends AppCompatActivity {
         listViewItems.setAdapter(itemsAdapter);
         setUpListViewListener();
     }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
 
     public void onAddItem(View view) {
         EditText editTextNewItem = (EditText) findViewById(R.id.etNewItem);
