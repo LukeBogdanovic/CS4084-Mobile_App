@@ -20,22 +20,6 @@
     <string name="resetText">Reset</string>
     <string name="stopwatchBack">background of stopwatch</string>
     <string name="hello_blank_fragment">Hello Blank fragment</string>
-    <string name="drinks_count">DRINKS COUNT</string>
-    <string name="wine">wine</string>
-    <string name="beer">beer</string>
-    <string name="spirit">spirit</string>
-    <string name="cider">cider</string>
-    <string name="stout">stout</string>
-    <string name="_0">0</string>
-    <string name="_count">0</string>
-    <string name="wineCount">0</string>
-    <string name="beerCount">0</string>
-    <string name="spiritCount">0</string>
-    <string name="ciderCount">0</string>
-    <string name="stoutCount">0</string>
-    <string name="drinksCount">title</string>
-    <string name="count">count</string>
-    <string name="reset">reset</string>
     <string name="navigation_drawer_open"> Open navigation drawer</string>
     <string name="navigation_drawer_close"> Close navigation drawer</string>
     <string name="home">Home</string>
@@ -50,6 +34,4 @@
     <string name="beer_pong">Beer Pong</string>
     <string name="pints_pints_pints">Pints Pints Pints</string>
     <string name="your_local_drinking_app">Your local drinking app</string>
-    <string name="units_of_alcohol_consumed">units of alcohol consumed</string>
-    <string name="total_units_of_alcohol_consumed">total units of alcohol consumed</string>
 </resources>
