@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/profile"
+            android:title="@string/profile" />
+
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/map"
+            android:title="@string/map" />
+    </group>
+
+    <item android:title="@string/tools">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_timer"
+                    android:icon="@drawable/stopwatch"
+                    android:title="@string/timers" />
+
+                <item
+                    android:id="@+id/nav_checklist"
+                    android:icon="@drawable/checklist"
+                    android:title="@string/checklist" />
+
+                <item
+                    android:id="@+id/nav_counter"
+                    android:icon="@drawable/counter"
+                    android:title="@string/counter" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="@string/drinking_games">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_kings_cup"
+                    android:icon="@drawable/checklist"
+                    android:title="@string/kings_cup" />
+                <item
+                    android:id="@+id/nav_beer_pong"
+                    android:icon="@drawable/counter"
+                    android:title="@string/beer_pong" />
+            </group>
+        </menu>
+    </item>
+</menu>
