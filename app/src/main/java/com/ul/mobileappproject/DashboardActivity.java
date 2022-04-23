@@ -81,28 +81,6 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 Intent checklistIntent = new Intent(DashboardActivity.this, ChecklistActivity.class);
                 startActivity(checklistIntent);
                 break;
-            // case R.id.nav_counter:
-            // Intent counterIntent = new Intent(DashboardActivity.this,
-            // CounterActivity.class);
-            // startActivity(counterIntent);
-            // break;
-        }
-        return true;
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch (menuItem.getItemId()) {
-            case R.id.nav_home:
-                break;
-            case R.id.nav_timer:
-                Intent clockIntent = new Intent(DashboardActivity.this, ClockActivity.class);
-                startActivity(clockIntent);
-                break;
-            case R.id.nav_checklist:
-                Intent checklistIntent = new Intent(DashboardActivity.this, ChecklistActivity.class);
-                startActivity(checklistIntent);
-                break;
 //            case R.id.nav_counter:
 //                Intent counterIntent = new Intent(DashboardActivity.this, CounterActivity.class);
 //                startActivity(counterIntent);
