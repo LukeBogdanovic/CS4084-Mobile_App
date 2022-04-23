@@ -34,4 +34,5 @@
     <string name="beer_pong">Beer Pong</string>
     <string name="pints_pints_pints">Pints Pints Pints</string>
     <string name="your_local_drinking_app">Your local drinking app</string>
+    <string name="settings">settings</string>
 </resources>
