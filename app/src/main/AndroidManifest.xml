@@ -38,14 +38,14 @@
         <activity
             android:name=".RegistrationActivity"
             tools:ignore="Instantiatable" />
-        <activity android:name=".DashboardActivity" />
-        <activity android:name=".ChecklistActivity" />
-        <activity android:name=".ClockActivity" />
-        <activity android:name=".DrinksCountActivity" />
+        <activity android:name=".DashboardActivity"/>
+        <activity android:name=".ChecklistActivity"/>
+        <activity android:name=".ClockActivity"/>
+        <activity android:name=".DrinksCountActivity"/>
+        <activity android:name=".DrinkawareActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
 </manifest>
