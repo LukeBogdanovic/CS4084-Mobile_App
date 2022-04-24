@@ -135,7 +135,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         //Add Nightclub Marker
         // Add a marker onto Angel Lane
-        LatLng angelLane = new LatLng(52.6637988,-8.6244057);
+        LatLng angelLane = new LatLng(52.6637988, -8.6244057);
         mMap.addMarker(new MarkerOptions().position(angelLane).title("Angel Lane: Nightclub").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)));
 
         //add Pub markers
@@ -144,32 +144,32 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.addMarker(new MarkerOptions().position(stables).title("Stables: pub").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
 
         // Add a marker onto Stables
-        LatLng hurlers = new LatLng(52.6677589,-8.5601482);
+        LatLng hurlers = new LatLng(52.6677589, -8.5601482);
         mMap.addMarker(new MarkerOptions().position(hurlers).title("Hurlers: pub").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
 
         // Add a marker onto Costello's
-        LatLng costellos = new LatLng(52.6602369,-8.628583);
+        LatLng costellos = new LatLng(52.6602369, -8.628583);
         mMap.addMarker(new MarkerOptions().position(costellos).title("Costello's: Pub").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
 
         // Add a marker onto Molly's
-        LatLng mollys = new LatLng(52.6642618,-8.6251827);
+        LatLng mollys = new LatLng(52.6642618, -8.6251827);
         mMap.addMarker(new MarkerOptions().position(mollys).title("Molly's: Pub").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
 
         // Add a marker onto The Red Hen
-        LatLng redHen = new LatLng(52.6647275,-8.6299033);
+        LatLng redHen = new LatLng(52.6647275, -8.6299033);
         mMap.addMarker(new MarkerOptions().position(redHen).title("Molly's: Pub").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
 
         //Add 3 restaurant markers
         // Add a marker onto Boojum
-        LatLng boojum = new LatLng(52.6645601,-8.627902);
+        LatLng boojum = new LatLng(52.6645601, -8.627902);
         mMap.addMarker(new MarkerOptions().position(boojum).title("Boojum: Restaurant").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
 
         // Add a marker onto SpitJacks
-        LatLng spitJack = new LatLng(52.6636116,-8.6303178);
+        LatLng spitJack = new LatLng(52.6636116, -8.6303178);
         mMap.addMarker(new MarkerOptions().position(spitJack).title("Spit Jack's: Restaurant").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
 
         // Add a marker onto Taikichi
-        LatLng taikichi = new LatLng(52.6621507,-8.6332915);
+        LatLng taikichi = new LatLng(52.6621507, -8.6332915);
         mMap.addMarker(new MarkerOptions().position(taikichi).title("taikichi: Restaurant").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
 
     }
@@ -241,6 +241,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 FirebaseAuth.getInstance().signOut();
                 break;
             case R.id.nav_map:
+                break;
+            case R.id.nav_profile:
+                Intent profileIntent = new Intent(MapsActivity.this, ProfileActivity.class);
+                startActivity(profileIntent);
                 break;
         }
         return true;
