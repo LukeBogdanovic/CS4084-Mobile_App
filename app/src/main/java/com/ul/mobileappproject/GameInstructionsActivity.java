@@ -64,11 +64,17 @@ public class GameInstructionsActivity extends AppCompatActivity implements Navig
         });
     }
 
-    private ArrayList<Game> getGames() {
+    public ArrayList<Game> getGames() {
         ArrayList<Game> games = new ArrayList<>();
         Game game = new Game();
         game.setGame("Buzz");
-        game.setDescription("Buzz is a fast-paced game which becomes more challenging as the game goes on. To start playing Buzz, the youngest player or whoever the group decides to be the starting player will start the count and say 1. The player to the first player’s left continues to count upwards by saying 2, and this continues until someone makes a mistake with the count.");
+        game.setDescription("Buzz is a fast-paced game which becomes more challenging as the game goes on. To start playing Buzz, the youngest player or whoever the group decides to be the starting player will start the count and say 1. The player to the first player’s left continues to count upwards by saying 2, and this continues until someone makes a mistake with the count.\n" +
+                "\n" +
+                "Someone messes up the count when they fail to say “buzz” for certain numbers.\n" +
+                "\n" +
+                "Here are some examples of rules when you can replace numbers with the word “buzz”: - Numbers with a 7 in it (7, 17, 27…) - Multiples of 7 (7, 14, 21…) - Double-digit repeating numbers (11, 22, 33…)\n" +
+                "\n" +
+                "When someone messes up a buzz, everyone drinks!");
         games.add(game);
 
         game = new Game();
@@ -82,17 +88,126 @@ public class GameInstructionsActivity extends AppCompatActivity implements Navig
 
         game = new Game();
         game.setGame("Kings Cup");
-        game.setDescription("Set the cards face down at the center of the table and let each player take turns picking a card from the deck. Your cards can surround a mug/glass of beer which would be your Kings Cup. Players then take turns picking a card and doing the action assigned to that particular card");
+        game.setDescription("Set the cards face down at the center of the table and let each player take turns picking a card from the deck. Your cards can surround a mug/glass of beer which would be your Kings Cup. Players then take turns picking a card and doing the action assigned to that particular card.\n" +
+                "\n" +
+                "What makes Kings Cup so much fun are the rules/actions that players need to follow whenever they pick a card.");
         games.add(game);
 
         game = new Game();
-        game.setGame("");
-        game.setDescription("");
+        game.setGame("Most Likely To");
+        game.setDescription("Most Likely To is one example of party drinking games that is also a good way to discover new things about your friends. This game is all about answering questions about who is most likely to do a particular thing. Don’t forget that hearing the story behind the answers takes the conversations to a whole other level!\n" +
+                "\n" +
+                "How to Play Most Likely To\n" +
+                "The main rule of Most Likely To is that players must choose which one among the players is most likely to do a particular action. Depending on how obvious or how shocking the answers are, talking about the answers add more fun to the game!");
         games.add(game);
 
         game = new Game();
-        game.setGame("");
-        game.setDescription("");
+        game.setGame("Cheers to the Governor");
+        game.setDescription("Gather in a circle and have your beers ready. The game starts with a player starting the count and saying 1. The person to their left goes up next and says 2. This goes on until one player says 21. At this point, all players yell “Cheers to the Governor!” and drink.\n" +
+                "\n" +
+                "The person who said 21 has the privilege of making up a rule to be added to the next round.");
+        games.add(game);
+
+        game = new Game();
+        game.setGame("Would You Rather");
+        game.setDescription("Would You Rather is a game where players need to choose between two difficult scenarios. Questions could easily go from easy decisions to tough dilemmas in an instant! It’s your chance to ask all sorts of questions in the name of fun!");
+        games.add(game);
+
+        game = new Game();
+        game.setGame("Jenga as a Drinking Game");
+        game.setDescription("If you’re playing Jenga as a drinking game, most of the mechanics remain the same as how you would play regular Jenga. Players still need to stack the blocks and build the highest tower possible.\n" +
+                "\n" +
+                "One thing that is not the same is that the individual wooden blocks or stones will be labeled with actions that players need to perform. If a player picks one of these labeled stones, he/she must do the action associated with the label.\n" +
+                "\n" +
+                "The game goes on with players stacking the blocks and doing the actions on the labels until the tower collapses. The one who causes the tower to fall loses the game and must drink!");
+        games.add(game);
+
+        game = new Game();
+        game.setGame("Truth or Dare");
+        game.setDescription("The main rule when playing Truth or Dare is that each player takes turns choosing between answering a question truthfully or doing a dare.");
+        games.add(game);
+
+        game = new Game();
+        game.setGame("Yahtzee as a Drinking Game");
+        game.setDescription("When playing Yahtzee, players can roll the dice up to 3 times. After the first and second rolls, a player must decide which dice to keep, if any, and roll the dice not kept. After the third roll, the player must choose a box to score on the scorecard.\n" +
+                "\n" +
+                "Once the player finishes their turn by writing something on the scorecard, their opponent takes a turn. This goes on until both players have filled all 13 boxes on their scorecard. After which, the final tally can be made. The player with the highest score wins the game!\n" +
+                "\n" +
+                "If you’re playing Yahtzee as a drinking game, the mechanics are the same as when you would play regular Yahtzee except with some additional dice rules that will make people drink!");
+        games.add(game);
+
+        game = new Game();
+        game.setGame("Never Have I Ever");
+        game.setDescription("To play Never Have I Ever, players take must take turns giving statements starting with “Never have I ever…” and add an action that they have never done before.");
+        games.add(game);
+
+        game = new Game();
+        game.setGame("Bite the Bag");
+        game.setDescription("Put an empty brown paper bag open on the floor and have the players form a circle around it. Without letting anything except your feet touch the floor, players take turns bending down and biting the bag only using their mouth and not making use of their hands.\n" +
+                "\n" +
+                "After all the players have bitten the bag at least once, it’s time for round two! Cut off one inch off the top of the bag and all the players bite the bag again. This goes on until there is nothing left of the bag.\n" +
+                "\n" +
+                "The lower the paper bag gets, the harder it will be for players to go down and bite it while not using their hands. If a player fails to pick up the bag with their mouth and bite it, he/she must take a drink and start the game over!");
+        games.add(game);
+
+        game = new Game();
+        game.setGame("The Alphabet Game");
+        game.setDescription("In this fun drinking game, each player takes turns to recite words that begin with each letter of the alphabet. However, all the words must have a theme.\n" +
+                "\n" +
+                "For example (if the theme is movies)\n" +
+                "\n" +
+                "The first person could say A Quiet Place\n" +
+                "\n" +
+                "The second person could say Back to the Future\n" +
+                "\n" +
+                "The third person could say Captain America: Civil War\n" +
+                "\n" +
+                "This goes on until there is a player who can’t give a word, and he/she must take a drink. The game then starts over with a new theme or category.");
+        games.add(game);
+
+        game = new Game();
+        game.setGame("Medusa Game");
+        game.setDescription("Each player will begin the game with their head on the table or with eyes closed. One player then starts counting backward 3, 2, 1.\n" +
+                "\n" +
+                "After the count, all the players look up at another player. If a player is looking at another player and that other player is also looking at them, both players need to shout “Medusa!” and must take a shot of alcohol.\n" +
+                "\n" +
+                "If a player doesn’t have anyone looking at him/her, they can skip taking the shot.\n" +
+                "\n" +
+                "Once everyone has taken shots, the players repeat the same process and the game continues until all the shots are gone.");
+        games.add(game);
+
+        game = new Game();
+        game.setGame("UNO as a Drinking Game");
+        game.setDescription("You play UNO as you normally would, but there are additional rules that will make people drink throughout the game.\n" +
+                "\n" +
+                "Here are some rules when playing UNO as a drinking game.\n" +
+                "\n" +
+                "Drink when you draw the same color as the player in front of you.\n" +
+                "Drink when you draw the same number as the player in front of you.\n" +
+                "If you draw a suspension card, you may choose a player to drink.\n" +
+                "In a draw-two card, the player who next draws a card must drink. (If your Draw Two card is the same color as the previous card, you must drink as well.)\n" +
+                "For a plus-four-card, everybody has to drink.");
+        games.add(game);
+
+        game = new Game();
+        game.setGame("21 Drinking Game");
+        game.setDescription("First, gather the players and make sure that you have enough alcohol for several rounds. The players must sit down in a circle and everyone should be able to look into each other’s eyes. The more players, the better!\n" +
+                "\n" +
+                "Next, the youngest player starts to count. All the player should count aloud in a clockwise direction from 1 to 21. Every player says one number, and the player who says the number 21 drinks and makes up a rule that can be added to the next round.");
+        games.add(game);
+
+        game = new Game();
+        game.setGame("Mr. Freeze");
+        game.setDescription("For this game, one person will be appointed as Mr. Freeze at the start of a party. During the party, this person can randomly choose to “freeze” at any time, and everyone that notices must stop and do the same. The last person to follow the freeze takes a shot.\n" +
+                "\n" +
+                "The first person that noticed the freeze is now the new Mr. Freeze, and everyone can play again. Be careful! You never know when the new Mr. Freeze will become “frozen”!");
+        games.add(game);
+
+        game = new Game();
+        game.setGame("Cup Swap");
+        game.setDescription("Prepare two cups and a spoon for each player. Fill one cup with an alcoholic beverage and leave the other cup empty.\n" +
+                "\n" +
+                "When the game starts, each player has exactly 1 minute to pour as much of the drink as they can into the empty cup using only a spoon. Once the minute is over, the players must drink the remainder of the original cup. You better be handy with that spoon!");
         games.add(game);
 
         return games;
