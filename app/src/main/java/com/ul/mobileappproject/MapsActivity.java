@@ -1,21 +1,26 @@
 package com.ul.mobileappproject;
 
 
-import androidx.fragment.app.FragmentActivity;
-
-import android.content.Intent;
+import android.Manifest.permission;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
-
-import android.Manifest.permission;
 import android.provider.Settings;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -24,6 +29,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -36,10 +43,13 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener {
 
     EditText locSearch;
     ImageView searchIcon;
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
 
     private boolean isPermissionGranted;
 
@@ -52,6 +62,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Map");
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
 
         locSearch = findViewById(R.id.search);
         searchIcon = findViewById(R.id.search_icon);
@@ -138,5 +159,53 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 permissionToken.continuePermissionRequest();
             }
         }).check();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.nav_home:
+                Intent homeIntent = new Intent(MapsActivity.this, DashboardActivity.class);
+                startActivity(homeIntent);
+                break;
+            case R.id.nav_timer:
+                Intent timerIntent = new Intent(MapsActivity.this, ClockActivity.class);
+                startActivity(timerIntent);
+                break;
+            case R.id.nav_checklist:
+                Intent checklistIntent = new Intent(MapsActivity.this, ChecklistActivity.class);
+                startActivity(checklistIntent);
+                break;
+            case R.id.nav_counter:
+                Intent counterIntent = new Intent(MapsActivity.this, DrinksCountActivity.class);
+                startActivity(counterIntent);
+                break;
+            case R.id.nav_games:
+                Intent gamesIntent = new Intent(MapsActivity.this, GameInstructionsActivity.class);
+                startActivity(gamesIntent);
+                break;
+            case R.id.nav_drinkaware:
+                Intent drinkawareIntent = new Intent(MapsActivity.this, DrinkawareActivity.class);
+                startActivity(drinkawareIntent);
+                break;
+            case R.id.nav_logout:
+                Intent logoutIntent = new Intent(MapsActivity.this, MainActivity.class);
+                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(logoutIntent);
+                FirebaseAuth.getInstance().signOut();
+                break;
+            case R.id.nav_map:
+                break;
+        }
+        return true;
     }
 }
