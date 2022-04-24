@@ -82,7 +82,7 @@ public class DrinkawareActivity extends AppCompatActivity implements NavigationV
                 break;
             case R.id.nav_logout:
                 Intent logoutIntent = new Intent(DrinkawareActivity.this, MainActivity.class);
-                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                logoutIntent.setFlags(logoutIntent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(logoutIntent);
                 FirebaseAuth.getInstance().signOut();
                 break;
