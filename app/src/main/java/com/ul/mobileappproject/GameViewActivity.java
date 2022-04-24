@@ -90,6 +90,10 @@ public class GameViewActivity extends AppCompatActivity implements NavigationVie
                 Intent mapsIntent = new Intent(GameViewActivity.this, MapsActivity.class);
                 startActivity(mapsIntent);
                 break;
+            case R.id.nav_profile:
+                Intent profileIntent = new Intent(GameViewActivity.this, ProfileActivity.class);
+                startActivity(profileIntent);
+                break;
         }
         return true;
     }
