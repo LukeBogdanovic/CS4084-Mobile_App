@@ -101,7 +101,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     public ArrayList<Post> getPosts() {
         ArrayList<Post> posts = new ArrayList<>();
 
-        Post post = new Post("Costello's", "Costello's", "https://www.limerick.ie/sites/default/files/styles/hero_image/public/media/images/2019-08/Costello%27s%20%20Tavern%201%20810x456.jpg?itok=BQLA2ugG");
+        Post post = new Post("Costello", "Costello's", "https://www.limerick.ie/sites/default/files/styles/hero_image/public/media/images/2019-08/Costello%27s%20%20Tavern%201%20810x456.jpg?itok=BQLA2ugG");
         posts.add(post);
 
         post = new Post("Angel Lane", "Angel Lane", "https://www.limerick.ie/sites/default/files/styles/hero_image/public/media/images/2017-10/Angel%20Lane%20Nightclub%20810x456.jpg?itok=KdvGXf55");
