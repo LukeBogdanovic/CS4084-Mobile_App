@@ -41,6 +41,7 @@
         <activity android:name=".DashboardActivity"/>
         <activity android:name=".ChecklistActivity"/>
         <activity android:name=".ClockActivity"/>
+        <activity android:name=".GameInstructionsActivity"/>
         <activity android:name=".DrinksCountActivity"/>
         <activity android:name=".DrinkawareActivity"/>
 

@@ -26,4 +26,10 @@
     <item name="timerInput" type="id" />
     <item name="editTextMinutes" type="id" />
     <item name="editTextSeconds" type="id" />
+    <item name="gameText" type="id" />
+    <item name="mSearch" type="id" />
+    <item name="recycler" type="id" />
+    <item name="gameInstructionBtn" type="id" />
+    <item name="nav_games" type="id" />
+    <item name="nav_drinkaware" type="id" />
 </resources>

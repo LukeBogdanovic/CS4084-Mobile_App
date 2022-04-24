@@ -1,43 +1,47 @@
 package com.ul.mobileappproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class DrinksCountActivity extends AppCompatActivity {
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
-    Button wine;
-    TextView wineCount;
-    int wineBtnCount = 0;
+import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
-    Button beer;
-    TextView beerCount;
-    int beerBtnCount = 0;
+public class DrinksCountActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button spirit;
-    TextView spiritCount;
-    int spiritBtnCount = 0;
-
-    Button cider;
-    TextView ciderCount;
-    int ciderBtnCount = 0;
-
-    Button stout;
-    TextView stoutCount;
-    int stoutBtnCount = 0;
-
-    Button units;
-    TextView unitsCount;
-    int unitsBtnCount = 0;
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
+    private Button wine, beer, spirit, cider, stout, units;
+    private TextView wineCount, beerCount, spiritCount, ciderCount, stoutCount, unitsCount;
+    private int wineBtnCount = 0, beerBtnCount = 0, spiritBtnCount = 0, ciderBtnCount = 0, stoutBtnCount = 0, unitsBtnCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drinkscount);
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Drinks Counter");
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
 
         wine = findViewById(R.id.wine);
         wineCount = findViewById(R.id.wineCount);
@@ -59,7 +63,7 @@ public class DrinksCountActivity extends AppCompatActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    public void resetCount (View view) {
+    public void resetCount(View view) {
         wineBtnCount = 0;
         beerBtnCount = 0;
         spiritBtnCount = 0;
@@ -114,4 +118,51 @@ public class DrinksCountActivity extends AppCompatActivity {
         unitsCount.setText(Integer.toString(unitsBtnCount));
     }
 
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.nav_home:
+                Intent homeIntent = new Intent(DrinksCountActivity.this, DashboardActivity.class);
+                startActivity(homeIntent);
+                break;
+            case R.id.nav_timer:
+                Intent timerIntent = new Intent(DrinksCountActivity.this, ClockActivity.class);
+                startActivity(timerIntent);
+                break;
+            case R.id.nav_checklist:
+                Intent checklistIntent = new Intent(DrinksCountActivity.this, ChecklistActivity.class);
+                startActivity(checklistIntent);
+                break;
+            case R.id.nav_counter:
+                break;
+            case R.id.nav_games:
+                Intent gamesIntent = new Intent(DrinksCountActivity.this, GameInstructionsActivity.class);
+                startActivity(gamesIntent);
+                break;
+            case R.id.nav_drinkaware:
+                Intent drinkawareIntent = new Intent(DrinksCountActivity.this, DrinkawareActivity.class);
+                startActivity(drinkawareIntent);
+                break;
+            case R.id.nav_logout:
+                Intent logoutIntent = new Intent(DrinksCountActivity.this, MainActivity.class);
+                logoutIntent.setFlags(logoutIntent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(logoutIntent);
+                FirebaseAuth.getInstance().signOut();
+                break;
+            case R.id.nav_map:
+                Intent mapsIntent = new Intent(DrinksCountActivity.this, MapsActivity.class);
+                startActivity(mapsIntent);
+                break;
+        }
+        return true;
+    }
 }

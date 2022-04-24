@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MobileAppProject</string>
+    <string name="app_name">Pints Pints Pints</string>
     <string name="register">Register</string>
     <string name="login">Login</string>
     <string name="background_image_of_drinks">Background image of drinks</string>
@@ -34,6 +34,8 @@
     <string name="beer_pong">Beer Pong</string>
     <string name="pints_pints_pints">Pints Pints Pints</string>
     <string name="your_local_drinking_app">Your local drinking app</string>
+    <string name="stopwatch">StopWatch</string>
+    <string name="timerString">Timer</string>
     <string name="settings">settings</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="search_icon">search icon</string>
@@ -52,4 +54,6 @@
     <string name="total_drinks_consumed">total drinks consumed</string>
     <string name="reset">reset</string>
     <string name="count">count</string>
+    <string name="games">Games</string>
+    <string name="drinkaware">Drink Aware</string>
 </resources>
