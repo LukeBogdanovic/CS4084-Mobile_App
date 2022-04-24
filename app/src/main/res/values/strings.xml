@@ -66,4 +66,6 @@
     <string name="profile">Profile</string>
     <string name="Profile_details">Bobby O\'Brien \n Age:21</string>
     <string name="profile_description">Hey I\'m bobby O\'Brien I love going out drinking with my friends \n \n \n \n \n Post go below here </string>
+    <string name="description">Description</string>
+
 </resources>
