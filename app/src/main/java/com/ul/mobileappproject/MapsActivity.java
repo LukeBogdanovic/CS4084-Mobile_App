@@ -80,8 +80,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 gotoLocation(address.getLatitude(), address.getLongitude());
 
                 mMap.addMarker(new MarkerOptions().position(new LatLng(address.getLatitude(), address.getLongitude())));
-
-                Toast.makeText(this, address.getLocality(), Toast.LENGTH_SHORT).show();
             }
         } catch (IOException e) {
             e.printStackTrace();
