@@ -229,6 +229,10 @@ public class GameInstructionsActivity extends AppCompatActivity implements Navig
                 Intent homeIntent = new Intent(GameInstructionsActivity.this, DashboardActivity.class);
                 startActivity(homeIntent);
                 break;
+            case R.id.nav_profile:
+                Intent profileIntent = new Intent(GameInstructionsActivity.this, ProfileActivity.class);
+                startActivity(profileIntent);
+                break;
             case R.id.nav_timer:
                 Intent clockIntent = new Intent(GameInstructionsActivity.this, ClockActivity.class);
                 startActivity(clockIntent);

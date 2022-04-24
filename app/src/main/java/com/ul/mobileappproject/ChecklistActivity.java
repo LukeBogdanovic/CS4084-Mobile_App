@@ -109,6 +109,10 @@ public class ChecklistActivity extends AppCompatActivity implements NavigationVi
                 Intent homeIntent = new Intent(ChecklistActivity.this, DashboardActivity.class);
                 startActivity(homeIntent);
                 break;
+            case R.id.nav_profile:
+                Intent profileIntent = new Intent(ChecklistActivity.this, ProfileActivity.class);
+                startActivity(profileIntent);
+                break;
             case R.id.nav_timer:
                 Intent timerIntent = new Intent(ChecklistActivity.this, ClockActivity.class);
                 startActivity(timerIntent);

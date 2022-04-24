@@ -96,6 +96,10 @@ public class PostViewActivity extends AppCompatActivity implements NavigationVie
                 startActivity(logoutIntent);
                 FirebaseAuth.getInstance().signOut();
                 break;
+            case R.id.nav_profile:
+                Intent profileIntent = new Intent(PostViewActivity.this, ProfileActivity.class);
+                startActivity(profileIntent);
+                break;
         }
         return true;
     }
