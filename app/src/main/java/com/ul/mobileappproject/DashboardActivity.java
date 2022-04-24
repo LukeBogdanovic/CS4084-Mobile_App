@@ -10,9 +10,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -36,6 +41,13 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+
+        RecyclerView recyclerView = findViewById(R.id.recycler);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        final DashboardAdapter adapter = new DashboardAdapter(this, getPosts());
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
@@ -88,5 +100,23 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 break;
         }
         return true;
+    }
+
+    public ArrayList<Post> getPosts() {
+        ArrayList<Post> posts = new ArrayList<>();
+
+        Post post = new Post("Costello", "Costello's", "https://www.limerick.ie/sites/default/files/styles/hero_image/public/media/images/2019-08/Costello%27s%20%20Tavern%201%20810x456.jpg?itok=BQLA2ugG");
+        posts.add(post);
+
+        post = new Post("Angel Lane", "Angel Lane", "https://www.limerick.ie/sites/default/files/styles/hero_image/public/media/images/2017-10/Angel%20Lane%20Nightclub%20810x456.jpg?itok=KdvGXf55");
+        posts.add(post);
+
+        post = new Post("Stables", "Stables", "https://ulmembersclubs.wolves.ie/assets/img/logos/stables.jpg");
+        posts.add(post);
+
+        post = new Post("Hurlers", "Hurlers", "https://lh3.googleusercontent.com/p/AF1QipNrtb1Sk04FxNv6Qw8sfSNR6Y286nBnM9cIpZzE=w1080-h608-p-no-v0");
+        posts.add(post);
+
+        return posts;
     }
 }
