@@ -101,7 +101,7 @@ public class ClockActivity extends AppCompatActivity implements NavigationView.O
                 break;
             case R.id.nav_logout:
                 Intent logoutIntent = new Intent(ClockActivity.this, MainActivity.class);
-                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                logoutIntent.setFlags(logoutIntent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(logoutIntent);
                 FirebaseAuth.getInstance().signOut();
                 break;

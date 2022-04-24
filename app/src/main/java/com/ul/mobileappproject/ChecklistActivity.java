@@ -129,7 +129,7 @@ public class ChecklistActivity extends AppCompatActivity implements NavigationVi
                 break;
             case R.id.nav_logout:
                 Intent logoutIntent = new Intent(ChecklistActivity.this, MainActivity.class);
-                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                logoutIntent.setFlags(logoutIntent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(logoutIntent);
                 FirebaseAuth.getInstance().signOut();
                 break;
