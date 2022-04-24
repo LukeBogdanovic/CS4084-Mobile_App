@@ -101,16 +101,16 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     public ArrayList<Post> getPosts() {
         ArrayList<Post> posts = new ArrayList<>();
 
-        Post post = new Post("Costello", "Costello's", "https://www.limerick.ie/sites/default/files/styles/hero_image/public/media/images/2019-08/Costello%27s%20%20Tavern%201%20810x456.jpg?itok=BQLA2ugG");
+        Post post = new Post("Costello", "Guinness €3.50 all day Thursday", "https://www.limerick.ie/sites/default/files/styles/hero_image/public/media/images/2019-08/Costello%27s%20%20Tavern%201%20810x456.jpg?itok=BQLA2ugG");
         posts.add(post);
 
-        post = new Post("Angel Lane", "Angel Lane", "https://www.limerick.ie/sites/default/files/styles/hero_image/public/media/images/2017-10/Angel%20Lane%20Nightclub%20810x456.jpg?itok=KdvGXf55");
+        post = new Post("Angel Lane", "3 Jaeger bombs for €10 Tuesday night", "https://www.limerick.ie/sites/default/files/styles/hero_image/public/media/images/2017-10/Angel%20Lane%20Nightclub%20810x456.jpg?itok=KdvGXf55");
         posts.add(post);
 
-        post = new Post("Stables", "Stables", "https://ulmembersclubs.wolves.ie/assets/img/logos/stables.jpg");
+        post = new Post("Stables", "Jersey Night Tuesday, wear your County Colours", "https://ulmembersclubs.wolves.ie/assets/img/logos/stables.jpg");
         posts.add(post);
 
-        post = new Post("Hurlers", "Hurlers", "https://lh3.googleusercontent.com/p/AF1QipNrtb1Sk04FxNv6Qw8sfSNR6Y286nBnM9cIpZzE=w1080-h608-p-no-v0");
+        post = new Post("Hurlers", "Table quiz Wednesday at 6pm", "https://lh3.googleusercontent.com/p/AF1QipNrtb1Sk04FxNv6Qw8sfSNR6Y286nBnM9cIpZzE=w1080-h608-p-no-v0");
         posts.add(post);
 
         return posts;
