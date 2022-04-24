@@ -50,6 +50,8 @@
     <string name="beer_pong">Beer Pong</string>
     <string name="pints_pints_pints">Pints Pints Pints</string>
     <string name="your_local_drinking_app">Your local drinking app</string>
+    <string name="stopwatch">StopWatch</string>
+    <string name="timerString">Timer</string>
     <string name="settings">settings</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="search_icon">search icon</string>
@@ -60,4 +62,6 @@
     <string name="para3">Different types of alcohol contain different amounts of alcohol so it is important to know how much you\'re actually consuming based on what you are drinking. The image above is a good guide to follow to see how much alcohol is entering your body.</string>
     <string name="drinks_counter">Drinks Counter</string>
     <string name="total_drinks_consumed">total drinks consumed</string>
+    <string name="games">Games</string>
+    <string name="drinkaware">Drink Aware</string>
 </resources>
