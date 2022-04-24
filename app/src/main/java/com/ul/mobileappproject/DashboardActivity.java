@@ -75,6 +75,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             case R.id.nav_drinkaware:
                 Intent drinkawareIntent = new Intent(DashboardActivity.this, DrinkawareActivity.class);
                 startActivity(drinkawareIntent);
+                break;
             case R.id.nav_logout:
                 Intent logoutIntent = new Intent(DashboardActivity.this, MainActivity.class);
                 logoutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

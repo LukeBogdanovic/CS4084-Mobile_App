@@ -14,6 +14,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class DrinkawareActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -78,6 +79,16 @@ public class DrinkawareActivity extends AppCompatActivity implements NavigationV
                 startActivity(gamesIntent);
                 break;
             case R.id.nav_drinkaware:
+                break;
+            case R.id.nav_logout:
+                Intent logoutIntent = new Intent(DrinkawareActivity.this, MainActivity.class);
+                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(logoutIntent);
+                FirebaseAuth.getInstance().signOut();
+                break;
+            case R.id.nav_map:
+                Intent mapsIntent = new Intent(DrinkawareActivity.this, MapsActivity.class);
+                startActivity(mapsIntent);
                 break;
         }
         return true;

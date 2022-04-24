@@ -16,6 +16,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ClockActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -97,6 +98,16 @@ public class ClockActivity extends AppCompatActivity implements NavigationView.O
             case R.id.nav_drinkaware:
                 Intent drinkawareIntent = new Intent(ClockActivity.this, DrinkawareActivity.class);
                 startActivity(drinkawareIntent);
+                break;
+            case R.id.nav_logout:
+                Intent logoutIntent = new Intent(ClockActivity.this, MainActivity.class);
+                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(logoutIntent);
+                FirebaseAuth.getInstance().signOut();
+                break;
+            case R.id.nav_map:
+                Intent mapsIntent = new Intent(ClockActivity.this, MapsActivity.class);
+                startActivity(mapsIntent);
                 break;
         }
         return true;

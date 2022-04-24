@@ -16,6 +16,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.apache.commons.io.FileUtils;
 
@@ -125,6 +126,16 @@ public class ChecklistActivity extends AppCompatActivity implements NavigationVi
             case R.id.nav_drinkaware:
                 Intent drinkawareIntent = new Intent(ChecklistActivity.this, DrinkawareActivity.class);
                 startActivity(drinkawareIntent);
+                break;
+            case R.id.nav_logout:
+                Intent logoutIntent = new Intent(ChecklistActivity.this, MainActivity.class);
+                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(logoutIntent);
+                FirebaseAuth.getInstance().signOut();
+                break;
+            case R.id.nav_map:
+                Intent mapsIntent = new Intent(ChecklistActivity.this, MapsActivity.class);
+                startActivity(mapsIntent);
                 break;
         }
         return true;

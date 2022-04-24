@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -130,6 +131,16 @@ public class GameInstructionsActivity extends AppCompatActivity implements Navig
             case R.id.nav_drinkaware:
                 Intent drinkawareIntent = new Intent(GameInstructionsActivity.this, DrinkawareActivity.class);
                 startActivity(drinkawareIntent);
+                break;
+            case R.id.nav_logout:
+                Intent logoutIntent = new Intent(GameInstructionsActivity.this, MainActivity.class);
+                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(logoutIntent);
+                FirebaseAuth.getInstance().signOut();
+                break;
+            case R.id.nav_map:
+                Intent mapsIntent = new Intent(GameInstructionsActivity.this, MapsActivity.class);
+                startActivity(mapsIntent);
                 break;
         }
         return true;
