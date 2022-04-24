@@ -81,6 +81,10 @@ public class ClockActivity extends AppCompatActivity implements NavigationView.O
                 Intent homeIntent = new Intent(ClockActivity.this, DashboardActivity.class);
                 startActivity(homeIntent);
                 break;
+            case R.id.nav_profile:
+                Intent profileIntent = new Intent(ClockActivity.this, ProfileActivity.class);
+                startActivity(profileIntent);
+                break;
             case R.id.nav_timer:
                 break;
             case R.id.nav_checklist:

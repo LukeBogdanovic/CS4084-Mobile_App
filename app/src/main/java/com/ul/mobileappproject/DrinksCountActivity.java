@@ -134,6 +134,10 @@ public class DrinksCountActivity extends AppCompatActivity implements Navigation
                 Intent homeIntent = new Intent(DrinksCountActivity.this, DashboardActivity.class);
                 startActivity(homeIntent);
                 break;
+            case R.id.nav_profile:
+                Intent profileIntent = new Intent(DrinksCountActivity.this, ProfileActivity.class);
+                startActivity(profileIntent);
+                break;
             case R.id.nav_timer:
                 Intent timerIntent = new Intent(DrinksCountActivity.this, ClockActivity.class);
                 startActivity(timerIntent);

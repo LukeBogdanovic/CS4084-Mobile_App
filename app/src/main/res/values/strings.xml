@@ -39,7 +39,6 @@
     <string name="navigation_drawer_open"> Open navigation drawer</string>
     <string name="navigation_drawer_close"> Close navigation drawer</string>
     <string name="home">Home</string>
-    <string name="profile">Profile</string>
     <string name="map">Map</string>
     <string name="tools">Tools</string>
     <string name="timers">Timers</string>
@@ -64,4 +63,7 @@
     <string name="total_drinks_consumed">total drinks consumed</string>
     <string name="games">Games</string>
     <string name="drinkaware">Drink Aware</string>
+    <string name="profile">Profile</string>
+    <string name="Profile_details">Bobby O\'Brien \n Age:21</string>
+    <string name="profile_description">Hey I\'m bobby O\'Brien I love going out drinking with my friends \n \n \n \n \n Post go below here </string>
 </resources>
