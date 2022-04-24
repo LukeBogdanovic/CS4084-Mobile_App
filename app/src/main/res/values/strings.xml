@@ -36,6 +36,9 @@
     <string name="your_local_drinking_app">Your local drinking app</string>
     <string name="stopwatch">StopWatch</string>
     <string name="timerString">Timer</string>
+    <string name="settings">settings</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="search_icon">search icon</string>
     <string name="drinkawarelogo">drinkawarelogo</string>
     <string name="para1"><![CDATA[We have partnered with Drinkaware Ireland to help raise awareness surrounding alcohol consumption. It is extremely important that we practice safe drinking even while having fun on our nights out or when we\'re drinking with our friends & family at home.]]></string>
     <string name="para2"><![CDATA[Drinkaware Ireland has a site that allows you to become familiar with topics like \'Mental Health & Alcohol\', \'Understanding Alcohol\' & \'Alcohol Consumption Guides\'. Please press on the drinkaware.ie image above to be taken to their site and learn about safe drinking.]]></string>

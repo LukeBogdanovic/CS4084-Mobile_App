@@ -12,6 +12,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -51,6 +52,10 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         switch (menuItem.getItemId()) {
             case R.id.nav_home:
                 break;
+            case R.id.nav_map:
+                Intent mapsIntent = new Intent(DashboardActivity.this, MapsActivity.class);
+                startActivity(mapsIntent);
+                break;
             case R.id.nav_timer:
                 Intent clockIntent = new Intent(DashboardActivity.this, ClockActivity.class);
                 startActivity(clockIntent);
@@ -70,6 +75,11 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             case R.id.nav_drinkaware:
                 Intent drinkawareIntent = new Intent(DashboardActivity.this, DrinkawareActivity.class);
                 startActivity(drinkawareIntent);
+            case R.id.nav_logout:
+                Intent logoutIntent = new Intent(DashboardActivity.this, MainActivity.class);
+                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(logoutIntent);
+                FirebaseAuth.getInstance().signOut();
                 break;
         }
         return true;
