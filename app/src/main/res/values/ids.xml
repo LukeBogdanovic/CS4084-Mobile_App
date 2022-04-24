@@ -32,4 +32,7 @@
     <item name="gameInstructionBtn" type="id" />
     <item name="nav_games" type="id" />
     <item name="nav_drinkaware" type="id" />
+    <item name="profileText" type="id" />
+    <item name="postText" type="id" />
+    <item name="postImage" type="id" />
 </resources>

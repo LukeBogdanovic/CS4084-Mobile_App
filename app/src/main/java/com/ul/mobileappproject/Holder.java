@@ -30,8 +30,7 @@ public class Holder extends RecyclerView.ViewHolder implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        final Intent intent;
-        intent = new Intent(context, GameViewActivity.class);
+        final Intent intent = new Intent(context, GameViewActivity.class);
         intent.putExtra("Game", games.get(getAdapterPosition()).getGame());
         intent.putExtra("Description", games.get(getAdapterPosition()).getDescription());
         context.startActivity(intent);
