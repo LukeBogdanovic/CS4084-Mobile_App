@@ -17,6 +17,14 @@ public class Holder extends RecyclerView.ViewHolder implements View.OnClickListe
     GameInstructionsActivity gameInstructionsActivity = new GameInstructionsActivity();
     ArrayList<Game> games;
 
+    /**
+     * Holder constructor.
+     * Initializes the holder userInterface.
+     * Sets the on click listener for the holder.
+     * Initializes the game ArrayList.
+     *
+     * @param itemView
+     */
     public Holder(View itemView) {
         super(itemView);
         this.gameText = itemView.findViewById(R.id.gameText);
@@ -28,6 +36,13 @@ public class Holder extends RecyclerView.ViewHolder implements View.OnClickListe
         games.addAll(gameInstructionsActivity.getGames());
     }
 
+    /**
+     * Starts the PostViewActivity on click.
+     * Sends the game name and game description from games ArrayList at specified position
+     * to display the full post in the postView activity.
+     *
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         final Intent intent = new Intent(context, GameViewActivity.class);
@@ -36,6 +51,11 @@ public class Holder extends RecyclerView.ViewHolder implements View.OnClickListe
         context.startActivity(intent);
     }
 
+    /**
+     * Sets the itemClickListener of the holder
+     *
+     * @param ic
+     */
     public void setItemClickListener(ItemClickListener ic) {
         this.itemClickListener = ic;
     }

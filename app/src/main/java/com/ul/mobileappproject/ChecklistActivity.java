@@ -1,5 +1,6 @@
 package com.ul.mobileappproject;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -33,6 +34,13 @@ public class ChecklistActivity extends AppCompatActivity implements NavigationVi
     private ArrayAdapter<String> itemsAdapter;
     private ListView listViewItems;
 
+    /**
+     * Initializes the User interface elements from the elements in the xml file.
+     * Initializes the list with the read in items from the file on device.
+     * Initializes the navigation drawer user interface.
+     *
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +64,13 @@ public class ChecklistActivity extends AppCompatActivity implements NavigationVi
         setUpListViewListener();
     }
 
+    /**
+     * Adds the item to the items list.
+     * Resets the editText box to an empty String.
+     * Writes the new item to file on device.
+     *
+     * @param view
+     */
     public void onAddItem(View view) {
         EditText editTextNewItem = (EditText) findViewById(R.id.etNewItem);
         String itemText = editTextNewItem.getText().toString();
@@ -64,6 +79,10 @@ public class ChecklistActivity extends AppCompatActivity implements NavigationVi
         writeItems();
     }
 
+    /**
+     * Sets up the listener for long click of items in the listview.
+     * Deletes the item if a user long clicks an item.
+     */
     private void setUpListViewListener() {
         listViewItems.setOnItemLongClickListener((adapter, view, pos, id) -> {
             items.remove(pos);
@@ -73,6 +92,10 @@ public class ChecklistActivity extends AppCompatActivity implements NavigationVi
         });
     }
 
+    /**
+     * Reads the File from the device for previously entered items.
+     * Otherwise creates the file and initializes the arrayList to add items to.
+     */
     private void readItems() {
         File filesDir = getFilesDir();
         File todoFile = new File(filesDir, "todo.txt");
@@ -83,6 +106,9 @@ public class ChecklistActivity extends AppCompatActivity implements NavigationVi
         }
     }
 
+    /**
+     * Writes the added items to the file on the device
+     */
     private void writeItems() {
         File filesDir = getFilesDir();
         File todoFile = new File(filesDir, "todo.txt");
@@ -93,6 +119,10 @@ public class ChecklistActivity extends AppCompatActivity implements NavigationVi
         }
     }
 
+    /**
+     * Closes the navigation drawer if it is open.
+     * Otherwise uses the parent class function.
+     */
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -102,6 +132,13 @@ public class ChecklistActivity extends AppCompatActivity implements NavigationVi
         }
     }
 
+    /**
+     * Starts the activity of the selected menuItem from the navigation drawer.
+     *
+     * @param menuItem
+     * @return
+     */
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {

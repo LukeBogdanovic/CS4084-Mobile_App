@@ -22,6 +22,10 @@ public class DrinkawareActivity extends AppCompatActivity implements NavigationV
     NavigationView navigationView;
     Toolbar toolbar;
 
+    /**
+     * Initializes the user interface elements using the elements from the xml file.
+     * @param savedInstanceState
+     */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drinkaware);
@@ -39,6 +43,10 @@ public class DrinkawareActivity extends AppCompatActivity implements NavigationV
 
     }
 
+    /**
+     * Launches the user's default browser and sends the user to the drink aware website.
+     * @param view
+     */
     public void goToUrl(View view) {
         String url = "https://www.drinkaware.ie/";
         Uri uriUrl = Uri.parse(url);
@@ -46,6 +54,10 @@ public class DrinkawareActivity extends AppCompatActivity implements NavigationV
         startActivity(launchBrowser);
     }
 
+    /**
+     * Closes the navigation drawer if it is open.
+     * Otherwise uses the parent class function.
+     */
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -55,6 +67,13 @@ public class DrinkawareActivity extends AppCompatActivity implements NavigationV
         }
     }
 
+    /**
+     * Closes the navigation drawer if it is open.
+     * Otherwise uses the parent class function.
+     *
+     * @param menuItem
+     * @return boolean
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {

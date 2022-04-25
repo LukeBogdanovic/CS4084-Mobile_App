@@ -20,6 +20,10 @@ public class StopWatchFragment extends Fragment {
     private long startTime, elapsedTime, secs, mins, hrs, mSecs;
     private String hours, minutes, seconds, milliSeconds;
     private Handler mHandler = new Handler();
+    /**
+     * Runnable that calculates elapsed Time since timer start.
+     * Calls the update time function and passes the elapsedTime.
+     */
     private Runnable startTimer = new Runnable() {
         @Override
         public void run() {
@@ -29,6 +33,14 @@ public class StopWatchFragment extends Fragment {
         }
     };
 
+    /**
+     * Initializes the User interface elements with the elements from the xml file.
+     * Sets listeners for the start/resume,stop and reset buttons
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return View
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_stopwatch, container, false);
@@ -37,6 +49,7 @@ public class StopWatchFragment extends Fragment {
         buttonReset = (Button) view.findViewById(R.id.buttonReset);
         timer = (TextView) view.findViewById(R.id.timer);
         timerMs = (TextView) view.findViewById(R.id.timerMs);
+        // Starts the timer
         buttonStart.setOnClickListener(v -> {
             showStopButton();
             if (stopped) {
@@ -47,11 +60,13 @@ public class StopWatchFragment extends Fragment {
             mHandler.removeCallbacks(startTimer);
             mHandler.postDelayed(startTimer, 0);
         });
+        // Stops the timer
         buttonStop.setOnClickListener(v -> {
             hideStopButton();
             mHandler.removeCallbacks(startTimer);
             stopped = true;
         });
+        // Resets the displayed time to 0
         buttonReset.setOnClickListener(v -> {
             stopped = false;
             ((TextView) view.findViewById(R.id.timer)).setText("00:00:00");
@@ -60,6 +75,10 @@ public class StopWatchFragment extends Fragment {
         return view;
     }
 
+    /**
+     * Shows the stop Button.
+     * Hides the start/resume and reset buttons.
+     */
     private void showStopButton() {
         view = getView();
         ((Button) view.findViewById(R.id.buttonStart)).setVisibility(View.GONE);
@@ -67,6 +86,10 @@ public class StopWatchFragment extends Fragment {
         ((Button) view.findViewById(R.id.buttonStop)).setVisibility(View.VISIBLE);
     }
 
+    /**
+     *  Hides the stop button.
+     *  Displays the start/resume and reset buttons.
+     */
     private void hideStopButton() {
         view = getView();
         ((Button) view.findViewById(R.id.buttonStart)).setVisibility(View.VISIBLE);
@@ -74,6 +97,12 @@ public class StopWatchFragment extends Fragment {
         ((Button) view.findViewById(R.id.buttonStop)).setVisibility(View.GONE);
     }
 
+    /**
+     * Calculates the time since start in seconds,minutes,hours and milliseconds.
+     * Updates the time on the User Interface since start with the
+     * calculated seconds,minutes, hours and milliseconds.
+     * @param time
+     */
     private void updateTimer(float time) {
         view = getView();
         secs = (long) (time / 1000);

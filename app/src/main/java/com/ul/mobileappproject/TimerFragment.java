@@ -23,6 +23,14 @@ public class TimerFragment extends Fragment {
     private EditText etMinutes, etSeconds;
     private Button startButton, resetButton;
 
+    /**
+     * Initializes the user interface elements with the elements from the xml file.
+     * Sets listeners for buttons to listen for clicks.
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_timer, container, false);
@@ -30,6 +38,7 @@ public class TimerFragment extends Fragment {
         etSeconds = (EditText) view.findViewById(R.id.editTextSeconds);
         startButton = view.findViewById(R.id.timerStartButton);
         resetButton = view.findViewById(R.id.timerResetButton);
+        // Starts/resumes the timer if the timer is currently running, otherwise pauses the timer
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,6 +49,7 @@ public class TimerFragment extends Fragment {
                 }
             }
         });
+        // Resets the timer to it's state before countdown began
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +60,12 @@ public class TimerFragment extends Fragment {
         return view;
     }
 
+    /**
+     * Starts the timer.
+     * Checks if the time entered is an hour or above or if it is equal to 0.
+     * If the above is the case provides feedback to the user that time entered is invalid.
+     * Sets the text of the start button to Pause and hides the reset button.
+     */
     private void startTimer() {
         if(!started) {
             long minutes = Long.parseLong(etMinutes.getText().toString());
@@ -64,12 +80,20 @@ public class TimerFragment extends Fragment {
             started = true;
         }
         countDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
+            /**
+             * Calls the function to update the timer's text
+             * @param millisUntilFinished
+             */
             @Override
             public void onTick(long millisUntilFinished) {
                 mTimeLeftInMillis = millisUntilFinished;
                 updateCountDownText();
             }
 
+            /**
+             * Shows the start/resume button and sets the text of the button to "Start".
+             * Hides the reset Button.
+             */
             @Override
             public void onFinish() {
                 mTimerRunning = false;
@@ -83,6 +107,11 @@ public class TimerFragment extends Fragment {
         resetButton.setVisibility(View.INVISIBLE);
     }
 
+    /**
+     * Pauses the timer.
+     * Sets the start button text to resume.
+     * Displays the reset button.
+     */
     private void pauseTimer() {
         countDownTimer.cancel();
         mTimerRunning = false;
@@ -90,6 +119,10 @@ public class TimerFragment extends Fragment {
         resetButton.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * Resets the timer to its state before start button was clicked.
+     * Hides the reset button and displays the start/resume button.
+     */
     private void resetTimer() {
         mTimeLeftInMillis = mStartTimeInMillis;
         started = false;
@@ -98,6 +131,9 @@ public class TimerFragment extends Fragment {
         startButton.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * Updates the minutes and seconds text of the countdown timer.
+     */
     private void updateCountDownText() {
         etMinutes.setText(String.format(Locale.getDefault(), "%02d", (long) ((mTimeLeftInMillis / 1000) / 60)));
         etSeconds.setText(String.format(Locale.getDefault(), "%02d", (long) ((mTimeLeftInMillis / 1000) % 60)));

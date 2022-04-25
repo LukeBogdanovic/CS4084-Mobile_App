@@ -27,6 +27,15 @@ public class GameInstructionsActivity extends AppCompatActivity implements Navig
     Toolbar toolbar;
     SearchView searchView;
 
+    /**
+     * Initializes the user interface elements from the elements in the xml file.
+     * Initializes the navigation drawer user interface.
+     * Initializes the Recycler view and sets the adapter for the recycler view.
+     * Initializes the Search view and sets the listener for the search view to filter the
+     * recycler view list.
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,14 +57,21 @@ public class GameInstructionsActivity extends AppCompatActivity implements Navig
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
+        // Sets the adapter to use the games ArrayList
         final Adapter adapter = new Adapter(this, getGames());
         recyclerView.setAdapter(adapter);
+        // Sets listener for change of the text entered by the user
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
             }
 
+            /**
+             * Filters the list using the entered character sequence
+             * @param query
+             * @return boolean
+             */
             @Override
             public boolean onQueryTextChange(String query) {
                 adapter.getFilter().filter(query);
@@ -64,6 +80,12 @@ public class GameInstructionsActivity extends AppCompatActivity implements Navig
         });
     }
 
+    /**
+     * Creates the data for the games ArrayList and adds all created items to the
+     * ArrayList.
+     *
+     * @return ArrayList
+     */
     public ArrayList<Game> getGames() {
         ArrayList<Game> games = new ArrayList<>();
         Game game = new Game();
@@ -213,6 +235,10 @@ public class GameInstructionsActivity extends AppCompatActivity implements Navig
         return games;
     }
 
+    /**
+     * Closes the navigation drawer if it is open.
+     * Otherwise uses the parent class function.
+     */
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -222,6 +248,12 @@ public class GameInstructionsActivity extends AppCompatActivity implements Navig
         }
     }
 
+    /**
+     * Starts the activity of the selected menuItem from the navigation drawer.
+     *
+     * @param menuItem
+     * @return boolean
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {

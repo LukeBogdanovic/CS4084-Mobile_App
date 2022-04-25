@@ -36,6 +36,12 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    /**
+     * Starts the activity of the selected menuItem from the navigation drawer.
+     *
+     * @param menuItem
+     * @return boolean
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {

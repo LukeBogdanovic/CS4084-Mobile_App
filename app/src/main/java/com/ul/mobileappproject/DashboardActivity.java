@@ -25,6 +25,13 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     NavigationView navigationView;
     Toolbar toolbar;
 
+    /**
+     * Initializes the user interface elements from the elements in the xml file.
+     * Initializes the navigation drawer user interface.
+     * Initializes the Recycler view and sets the adapter for the recycler view.
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,11 +52,15 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         RecyclerView recyclerView = findViewById(R.id.recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-
+        // Sets the adapter to use the posts ArrayList
         final DashboardAdapter adapter = new DashboardAdapter(this, getPosts());
         recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * Closes the navigation drawer if it is open.
+     * Otherwise uses the parent class function.
+     */
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -59,6 +70,13 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         }
     }
 
+    /**
+     * Closes the navigation drawer if it is open.
+     * Otherwise uses the parent class function.
+     *
+     * @param menuItem
+     * @return boolean
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
@@ -102,6 +120,11 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         return true;
     }
 
+    /**
+     * Creates post objects.
+     * Adds post objects into an ArrayList and returns the arraylist to calling function.
+     * @return ArrayList
+     */
     public ArrayList<Post> getPosts() {
         ArrayList<Post> posts = new ArrayList<>();
 

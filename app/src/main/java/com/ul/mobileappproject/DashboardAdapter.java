@@ -18,11 +18,26 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardHolder> {
     Context ctx;
     ArrayList<Post> posts;
 
+    /**
+     * Adapter constructor for the dashboard Activity.
+     * Initializes the posts ArrayList with the ArrayList from the Dashboard
+     * Activity.
+     *
+     * @param ctx
+     * @param posts
+     */
     public DashboardAdapter(Context ctx, ArrayList<Post> posts) {
         this.ctx = ctx;
         this.posts = posts;
     }
 
+    /**
+     * Creates the holder object using the associated layout xml file.
+     *
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @NonNull
     @Override
     public DashboardHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -31,6 +46,14 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardHolder> {
         return holder;
     }
 
+    /**
+     * Sets the profile and post text of the holder.
+     * Sets the image of the holder using an image loaded in from a URL.
+     * Creates a listener to create feedback for the user when they click on a holder item.
+     *
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(DashboardHolder holder, int position) {
         holder.profileText.setText(posts.get(position).getProfile());
@@ -39,6 +62,11 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardHolder> {
         holder.setItemClickListener((view, pos) -> Snackbar.make(view, posts.get(pos).getProfile(), Snackbar.LENGTH_SHORT).show());
     }
 
+    /**
+     * Gets the number of items in the posts ArrayList
+     *
+     * @return
+     */
     @Override
     public int getItemCount() {
         return posts.size();
