@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivity">
+
+    <navigation android:id="@+id/MainActivity"
+        app:startDestination="@id/mainActivity">
+        <activity
+            android:id="@+id/mainActivity"
+            android:name="com.ul.mobileappproject.MainActivity"
+            android:label="activity_main"
+            tools:layout="@layout/activity_main" />
+        <action
+            android:id="@+id/action_global_loginActivity"
+            app:destination="@id/Login" />
+        <action
+            android:id="@+id/action_global_Registration"
+            app:destination="@id/Registration" />
+    </navigation>
+    <navigation android:id="@+id/Login"
+        app:startDestination="@id/loginActivity">
+        <activity
+            android:id="@+id/loginActivity"
+            android:name="com.ul.mobileappproject.LoginActivity"
+            android:label="activity_login"
+            tools:layout="@layout/activity_login" />
+        <action
+            android:id="@+id/action_global_Dashboard"
+            app:destination="@id/Dashboard" />
+    </navigation>
+    <navigation android:id="@+id/Registration"
+        app:startDestination="@id/registrationActivity">
+        <activity
+            android:id="@+id/registrationActivity"
+            android:name="com.ul.mobileappproject.RegistrationActivity"
+            android:label="activity_registration"
+            tools:layout="@layout/activity_registration" />
+        <action
+            android:id="@+id/action_global_Login"
+            app:destination="@id/Login" />
+    </navigation>
+    <navigation android:id="@+id/Dashboard"
+        app:startDestination="@id/dashboardActivity">
+        <activity
+            android:id="@+id/dashboardActivity"
+            android:name="com.ul.mobileappproject.DashboardActivity"
+            android:label="activity_dashboard"
+            tools:layout="@layout/activity_dashboard" />
+        <action
+            android:id="@+id/action_global_DrinkAware"
+            app:destination="@id/DrinkAware" />
+        <action
+            android:id="@+id/action_global_Clocks"
+            app:destination="@id/Clocks" />
+        <action
+            android:id="@+id/action_global_DrinksCount"
+            app:destination="@id/DrinksCount" />
+        <action
+            android:id="@+id/action_global_Profile"
+            app:destination="@id/Profile" />
+        <action
+            android:id="@+id/action_global_PostView"
+            app:destination="@id/PostView" />
+        <action
+            android:id="@+id/action_global_CheckList"
+            app:destination="@id/CheckList" />
+        <action
+            android:id="@+id/action_global_Games"
+            app:destination="@id/GamesInstruction" />
+        <action
+            android:id="@+id/action_global_Maps"
+            app:destination="@id/Maps" />
+    </navigation>
+    <navigation android:id="@+id/DrinkAware"
+        app:startDestination="@id/drinkawareActivity">
+        <activity
+            android:id="@+id/drinkawareActivity"
+            android:name="com.ul.mobileappproject.DrinkawareActivity"
+            android:label="activity_drinkaware"
+            tools:layout="@layout/activity_drinkaware" />
+    </navigation>
+    <navigation android:id="@+id/Clocks"
+        app:startDestination="@id/clockActivity">
+        <activity
+            android:id="@+id/clockActivity"
+            android:name="com.ul.mobileappproject.ClockActivity"
+            android:label="ClockActivity" />
+        <action
+            android:id="@+id/action_global_Timer"
+            app:destination="@id/Timer" />
+        <action
+            android:id="@+id/action_global_stopWatchFragment"
+            app:destination="@id/stopWatchFragment" />
+    </navigation>
+    <fragment
+        android:id="@+id/Timer"
+        android:name="com.ul.mobileappproject.TimerFragment"
+        android:label="fragment_timer"
+        tools:layout="@layout/fragment_timer" >
+        <action
+            android:id="@+id/action_Timer_to_stopWatchFragment"
+            app:destination="@id/stopWatchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/stopWatchFragment"
+        android:name="com.ul.mobileappproject.StopWatchFragment"
+        android:label="StopWatchFragment" >
+        <action
+            android:id="@+id/action_stopWatchFragment_to_Timer"
+            app:destination="@id/Timer" />
+    </fragment>
+    <navigation android:id="@+id/DrinksCount"
+        app:startDestination="@id/drinksCountActivity">
+        <activity
+            android:id="@+id/drinksCountActivity"
+            android:name="com.ul.mobileappproject.DrinksCountActivity"
+            android:label="DrinksCountActivity" />
+    </navigation>
+    <navigation android:id="@+id/Profile"
+        app:startDestination="@id/profileActivity">
+        <activity
+            android:id="@+id/profileActivity"
+            android:name="com.ul.mobileappproject.ProfileActivity"
+            android:label="activity_profile"
+            tools:layout="@layout/activity_profile" />
+    </navigation>
+    <navigation android:id="@+id/PostView"
+        app:startDestination="@id/postViewActivity">
+        <activity
+            android:id="@+id/postViewActivity"
+            android:name="com.ul.mobileappproject.PostViewActivity"
+            android:label="activity_postview"
+            tools:layout="@layout/activity_postview" />
+    </navigation>
+    <navigation android:id="@+id/CheckList"
+        app:startDestination="@id/checklistActivity">
+        <activity
+            android:id="@+id/checklistActivity"
+            android:name="com.ul.mobileappproject.ChecklistActivity"
+            android:label="activity_checklist"
+            tools:layout="@layout/activity_checklist" />
+    </navigation>
+    <navigation android:id="@+id/GamesInstruction"
+        app:startDestination="@id/gameInstructionsActivity">
+        <activity
+            android:id="@+id/gameInstructionsActivity"
+            android:name="com.ul.mobileappproject.GameInstructionsActivity"
+            android:label="activity_gamesinstructions"
+            tools:layout="@layout/activity_gamesinstructions" />
+        <action
+            android:id="@+id/action_global_GameView"
+            app:destination="@id/GameView" />
+    </navigation>
+    <navigation android:id="@+id/GameView"
+        app:startDestination="@id/gameViewActivity">
+        <activity
+            android:id="@+id/gameViewActivity"
+            android:name="com.ul.mobileappproject.GameViewActivity"
+            android:label="GameViewActivity" />
+    </navigation>
+    <navigation android:id="@+id/Maps"
+        app:startDestination="@id/mapsActivity">
+        <activity
+            android:id="@+id/mapsActivity"
+            android:name="com.ul.mobileappproject.MapsActivity"
+            android:label="activity_maps"
+            tools:layout="@layout/activity_maps" />
+    </navigation>
+</navigation>

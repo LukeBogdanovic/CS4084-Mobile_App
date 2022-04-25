@@ -9,12 +9,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
@@ -25,6 +21,13 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
+    /**
+     * Initializes the user Interface using the xml file.
+     * Initializes the firebase authorization.
+     * Sets listener on the login button for a click to login the user.
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         String email = emailTV.getText().toString();
         String password = passwordTV.getText().toString();
-
+        // Checking if user has entered email and password
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(), "Please Enter email", Toast.LENGTH_LONG).show();
             return;

@@ -25,6 +25,13 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     NavigationView navigationView;
     Toolbar toolbar;
 
+    /**
+     * Initializes the user interface elements from the elements in the xml file.
+     * Initializes the navigation drawer user interface.
+     * Initializes the Recycler view and sets the adapter for the recycler view.
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,11 +52,15 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         RecyclerView recyclerView = findViewById(R.id.recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-
+        // Sets the adapter to use the posts ArrayList
         final DashboardAdapter adapter = new DashboardAdapter(this, getPosts());
         recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * Closes the navigation drawer if it is open.
+     * Otherwise uses the parent class function.
+     */
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -59,6 +70,13 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         }
     }
 
+    /**
+     * Closes the navigation drawer if it is open.
+     * Otherwise uses the parent class function.
+     *
+     * @param menuItem
+     * @return boolean
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
@@ -102,19 +120,24 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         return true;
     }
 
+    /**
+     * Creates post objects.
+     * Adds post objects into an ArrayList and returns the arraylist to calling function.
+     * @return ArrayList
+     */
     public ArrayList<Post> getPosts() {
         ArrayList<Post> posts = new ArrayList<>();
 
-        Post post = new Post("Costello", "Costello's", "https://www.limerick.ie/sites/default/files/styles/hero_image/public/media/images/2019-08/Costello%27s%20%20Tavern%201%20810x456.jpg?itok=BQLA2ugG");
+        Post post = new Post("Costello", "Guinness €3.50 all day Thursday", "https://www.limerick.ie/sites/default/files/styles/hero_image/public/media/images/2019-08/Costello%27s%20%20Tavern%201%20810x456.jpg?itok=BQLA2ugG");
         posts.add(post);
 
-        post = new Post("Angel Lane", "Angel Lane", "https://www.limerick.ie/sites/default/files/styles/hero_image/public/media/images/2017-10/Angel%20Lane%20Nightclub%20810x456.jpg?itok=KdvGXf55");
+        post = new Post("Angel Lane", "3 Jaeger bombs for €10 Tuesday night", "https://www.limerick.ie/sites/default/files/styles/hero_image/public/media/images/2017-10/Angel%20Lane%20Nightclub%20810x456.jpg?itok=KdvGXf55");
         posts.add(post);
 
-        post = new Post("Stables", "Stables", "https://ulmembersclubs.wolves.ie/assets/img/logos/stables.jpg");
+        post = new Post("Stables", "Jersey Night Tuesday, wear your County Colours", "https://ulmembersclubs.wolves.ie/assets/img/logos/stables.jpg");
         posts.add(post);
 
-        post = new Post("Hurlers", "Hurlers", "https://lh3.googleusercontent.com/p/AF1QipNrtb1Sk04FxNv6Qw8sfSNR6Y286nBnM9cIpZzE=w1080-h608-p-no-v0");
+        post = new Post("Hurlers", "Table quiz Wednesday at 6pm", "https://lh3.googleusercontent.com/p/AF1QipNrtb1Sk04FxNv6Qw8sfSNR6Y286nBnM9cIpZzE=w1080-h608-p-no-v0");
         posts.add(post);
 
         return posts;

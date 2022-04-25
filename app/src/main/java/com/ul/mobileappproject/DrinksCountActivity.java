@@ -110,6 +110,10 @@ public class DrinksCountActivity extends AppCompatActivity implements Navigation
         unitsCount.setText(Integer.toString(unitsBtnCount));
     }
 
+    /**
+     *
+     * @param view
+     */
     @SuppressLint("SetTextI18n")
     public void stoutCount(View view) {
         stoutBtnCount++;
@@ -118,6 +122,10 @@ public class DrinksCountActivity extends AppCompatActivity implements Navigation
         unitsCount.setText(Integer.toString(unitsBtnCount));
     }
 
+    /**
+     * Closes the navigation drawer if it is open.
+     * Otherwise uses the parent class function.
+     */
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -127,6 +135,13 @@ public class DrinksCountActivity extends AppCompatActivity implements Navigation
         }
     }
 
+    /**
+     * Closes the navigation drawer if it is open.
+     * Otherwise uses the parent class function.
+     *
+     * @param menuItem
+     * @return boolean
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {

@@ -22,6 +22,13 @@ public class GameViewActivity extends AppCompatActivity implements NavigationVie
     Toolbar toolbar;
     TextView descriptionTV;
 
+    /**
+     * Initializes the user interface elements from the elements in the xml file.
+     * Initializes the navigation drawer user interface.
+     * Sets the description textView with description passed using the intent.
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,11 +46,15 @@ public class GameViewActivity extends AppCompatActivity implements NavigationVie
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-
+        // Sets the description text after initializing with xml file elements.
         descriptionTV = findViewById(R.id.description_text);
         descriptionTV.setText(intent.getStringExtra("Description"));
     }
 
+    /**
+     * Closes the navigation drawer if it is open.
+     * Otherwise uses the parent class function.
+     */
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -53,6 +64,12 @@ public class GameViewActivity extends AppCompatActivity implements NavigationVie
         }
     }
 
+    /**
+     * Starts the activity of the selected menuItem from the navigation drawer.
+     *
+     * @param menuItem
+     * @return boolean
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {

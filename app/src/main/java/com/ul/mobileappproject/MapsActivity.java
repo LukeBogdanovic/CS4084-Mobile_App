@@ -78,17 +78,21 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         locSearch = findViewById(R.id.search);
         searchIcon = findViewById(R.id.search_icon);
 
+        //geoLocate if searchIcon is pressed
         searchIcon.setOnClickListener(this::geoLocate);
         checkMyPermission();
-        if (isPermissionGranted) {
-            // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-            SupportMapFragment mapFragment =
-                    (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-            mapFragment.getMapAsync(this);
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
 
-        }
     }
-
+    /**
+     * use Geocoder to get addresses matching a String,
+     * get latitude and longitude from the first address
+     * use gottoLocation(latitude,longitude) method to change cameras position to the latitude and longitude
+     * use latitude and longitude to create a marker on the map
+     * @param view
+     */
     private void geoLocate(View view) {
         String locationName = locSearch.getText().toString();
 
@@ -98,10 +102,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             if (addressList.size() > 0) {
                 Address address = addressList.get(0);
+                double latitude = address.getLatitude();
+                double longitude = address.getLongitude();
 
-                gotoLocation(address.getLatitude(), address.getLongitude());
-
-                mMap.addMarker(new MarkerOptions().position(new LatLng(address.getLatitude(), address.getLongitude())));
+                gotoLocation(latitude, longitude);
+                mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -109,10 +114,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     }
 
+    /**
+     * Change maps location to provided latitude and longitude
+     * @param latitude latitude for use with google maps
+     * @param longitude longitude for use with google maps
+     */
     private void gotoLocation(double latitude, double longitude) {
         LatLng LatLng = new LatLng(latitude, longitude);
 
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(LatLng, 18);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(LatLng, 16);
         mMap.moveCamera(cameraUpdate);
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
     }
@@ -121,7 +131,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
      * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Stables.
+     * we just add markers for one nightclub, 5 pubs and 3 restaurants .
      * If Google Play services is not installed on the device, the user will be prompted to install
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
@@ -141,11 +151,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         //add Pub markers
         // Add a marker onto Stables
         LatLng stables = new LatLng(52.6730436, -8.5709671);
-        mMap.addMarker(new MarkerOptions().position(stables).title("Stables: pub").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mMap.addMarker(new MarkerOptions().position(stables).title("Stables: Pub").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
 
         // Add a marker onto Stables
         LatLng hurlers = new LatLng(52.6677589, -8.5601482);
-        mMap.addMarker(new MarkerOptions().position(hurlers).title("Hurlers: pub").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mMap.addMarker(new MarkerOptions().position(hurlers).title("Hurlers: Pub").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
 
         // Add a marker onto Costello's
         LatLng costellos = new LatLng(52.6602369, -8.628583);
@@ -174,6 +184,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     }
 
+    /**
+     * use external 'com.karumi:dexter:6.2.3' to ask for permissions
+     * check if user has allowed location services use on the app
+     * if allowed set isPermissionGranted true
+     * if denied set isPermissionGranted false
+     * if not accepted or denied should be asked again
+     */
     private void checkMyPermission() {
         Dexter.withContext(this).withPermission(permission.ACCESS_FINE_LOCATION).withListener(new PermissionListener() {
             @Override
@@ -198,6 +215,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }).check();
     }
 
+    /**
+     * Closes the navigation drawer if it is open.
+     * Otherwise uses the parent class function.
+     */
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -207,6 +228,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+    /**
+     * Closes the navigation drawer if it is open.
+     * Otherwise uses the parent class function.
+     *
+     * @param menuItem
+     * @return boolean
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {

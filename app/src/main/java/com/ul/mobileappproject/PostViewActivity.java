@@ -25,6 +25,13 @@ public class PostViewActivity extends AppCompatActivity implements NavigationVie
     TextView postTV;
     ImageView postImage;
 
+    /**
+     * Initializes the user interface from the elements in the xml files.
+     * Sets the description using the description from the intent.
+     * Sets the image from the intent and loads the image in from the URL provided using the picasso Library.
+     *
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +57,10 @@ public class PostViewActivity extends AppCompatActivity implements NavigationVie
         Picasso.get().load(intent.getStringExtra("ImageURL")).into(postImage);
     }
 
+    /**
+     * Closes the navigation drawer if it is open.
+     * Otherwise uses the parent class function.
+     */
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -59,6 +70,12 @@ public class PostViewActivity extends AppCompatActivity implements NavigationVie
         }
     }
 
+    /**
+     * Starts the activity of the selected menuItem from the navigation drawer.
+     *
+     * @param menuItem
+     * @return boolean
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {

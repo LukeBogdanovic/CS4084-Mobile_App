@@ -19,6 +19,13 @@ public class DashboardHolder extends RecyclerView.ViewHolder implements View.OnC
     DashboardActivity dashboardActivity = new DashboardActivity();
     ArrayList<Post> posts;
 
+    /**
+     * Holder for a post on the Dashboard activity.
+     * Initializes the User interface elements from the xml file.
+     * Adds all the posts from the dashboard activity function to the posts ArrayList.
+     *
+     * @param itemView
+     */
     public DashboardHolder(View itemView) {
         super(itemView);
         this.profileText = itemView.findViewById(R.id.profileText);
@@ -32,6 +39,13 @@ public class DashboardHolder extends RecyclerView.ViewHolder implements View.OnC
         posts.addAll(dashboardActivity.getPosts());
     }
 
+    /**
+     * Starts the PostViewActivity on click.
+     * Sends the profile, postText and ImageURl from posts ArrayList at specified position
+     * to display the full post in the postView activity.
+     *
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         final Intent intent = new Intent(context, PostViewActivity.class);
@@ -41,6 +55,10 @@ public class DashboardHolder extends RecyclerView.ViewHolder implements View.OnC
         context.startActivity(intent);
     }
 
+    /**
+     * Sets the itemClickListener of the holder
+     * @param ic
+     */
     public void setItemClickListener(ItemClickListener ic) {
         this.itemClickListener = ic;
     }
