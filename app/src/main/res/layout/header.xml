@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@drawable/drink"
+        android:src="@drawable/drink_cyan"
         android:contentDescription="@string/background_image_of_drinks" />
 
     <TextView
@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/alfa_slab_one"
         android:text="@string/pints_pints_pints"
-        android:textColor="#BB30EF"
+        android:textColor="#00ffed"
         android:textSize="24sp" />
 
     <TextView
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/alfa_slab_one"
         android:text="@string/your_local_drinking_app"
-        android:textColor="#BB30EF"
+        android:textColor="#00ffed"
         android:textSize="14sp" />
   
 </LinearLayout>

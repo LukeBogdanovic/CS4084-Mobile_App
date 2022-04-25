@@ -81,13 +81,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         //geoLocate if searchIcon is pressed
         searchIcon.setOnClickListener(this::geoLocate);
         checkMyPermission();
-        if (isPermissionGranted) {
-            // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-            SupportMapFragment mapFragment =
-                    (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-            mapFragment.getMapAsync(this);
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
 
-        }
     }
     /**
      * use Geocoder to get addresses matching a String,
@@ -125,7 +122,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private void gotoLocation(double latitude, double longitude) {
         LatLng LatLng = new LatLng(latitude, longitude);
 
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(LatLng, 18);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(LatLng, 16);
         mMap.moveCamera(cameraUpdate);
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
     }
@@ -217,6 +214,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         }).check();
     }
+
+    /**
+     * Closes the navigation drawer if it is open.
+     * Otherwise uses the parent class function.
+     */
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
